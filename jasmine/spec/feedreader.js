@@ -31,12 +31,21 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+        it('every feed element contain URL', function() {
+            feedList = document.querySelector('.feed-list').getElementsByTagName('li');
+            for (let i=0; i < feedList.length; i++) {
+                anchor = feedList[i].getElementsByTagName('a');
+
+                expect(anchor).toBeDefined();
+            }
+        });
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        
     });
 
 
