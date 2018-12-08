@@ -61,7 +61,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('is hidden by defauld', function() {
-            expect(document.querySelector('body').className).toMatch('menu-hidden');
+            expect($("body")[0]).toHaveClass('menu-hidden');
         });
 
          /* TODO: Write a test that ensures the menu changes
@@ -70,15 +70,13 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
          it('diplay and hides on click', function() {
+            var body = $("body")[0];
+
             document.querySelector('.icon-list').click();
-            setTimeout(function() {
-            }, 3000);
-            expect($('#side-menu')).toBeVisible();
-            
-            // document.querySelector('.icon-list').click();            
-            // setTimeout(function() {
-            // }, 3000);
-            // expect($('#side-menu')).toBeHidden();
+            expect(body.className).toBe('');
+
+            document.querySelector('.icon-list').click();
+            expect(body. className).toBe('menu-hidden');
          });
     });
     /* TODO: Write a new test suite named "Initial Entries" */
