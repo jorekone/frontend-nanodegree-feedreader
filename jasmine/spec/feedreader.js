@@ -72,11 +72,11 @@ $(function() {
          it('diplay and hides on click', function() {
             var body = $("body")[0];
 
-            document.querySelector('.icon-list').click();
-            expect(body.className).toBe('');
+            document.querySelector('.icon-list').click();            
+            expect(body. className).not.toContain('menu-hidden');
 
             document.querySelector('.icon-list').click();
-            expect(body. className).toBe('menu-hidden');
+            expect(body. className).toContain('menu-hidden');
          });
     });
     
